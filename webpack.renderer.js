@@ -13,6 +13,9 @@ const nodeExternals = require('webpack-node-externals')
 const TerserPlugin = require('terser-webpack-plugin')
 
 
+// C. Analysis
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+
 //
 
 
@@ -47,6 +50,12 @@ module.exports = {
   },
 
   plugins:[
+    new BundleAnalyzerPlugin({
+      analyzerMode  :'static',
+      reportFilename:(process.env.COMPILE ? 'report.html' : 'report.dev.html'),
+      openAnalyzer  :false
+    }),
+
     new webpack.optimize.LimitChunkCountPlugin({
 		      maxChunks:1
 
@@ -79,14 +88,11 @@ module.exports = {
         use    :{
           loader:'babel-loader'
         }
-      }
-
-      /*
+      },
       {
         test  :/\.(scss|css)$/,
         loader:'ignore-loader'
       }
-      */
     ]
   }
 
