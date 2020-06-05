@@ -41,6 +41,9 @@ module.exports = {
     })
 
   ],
+  watchOptions:{
+    ignored:'/src/translations/'
+  },
   optimization:process.env.COMPILE ? {
     nodeEnv  :'production',
     minimize :true,

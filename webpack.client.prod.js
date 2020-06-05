@@ -28,6 +28,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   resolve:{
     alias:{
+      'react'           :path.resolve('./node_modules/react'),
+      'react-dom'       :path.resolve('./node_modules/react-dom'),
+      'react-intl'      :path.resolve('./node_modules/react-intl'),
+      'react-router-dom':path.resolve('./node_modules/react-router-dom')
     }
   },
 
@@ -71,6 +75,10 @@ module.exports = {
     ]
   },
 
+  watchOptions:{
+    ignored:'/src/translations/'
+  },
+
   plugins:[
 
     new HtmlWebpackPlugin({
@@ -80,7 +88,10 @@ module.exports = {
     new CopyPlugin({
       patterns:[
         { from: './src/assets/fonts', to: './' }, //Where the root is the output dir
-        { from: './src/assets/images', to: './' }
+        { from: './src/assets/images', to: './' },
+        { from: './src/assets/favicon', to: './public' }, //https://www.favicon-generator.org/
+        { from: './node_modules/@fwrlines/ds/src/assets/fonts', to: './public' },
+        { from: './node_modules/@fwrlines/ds/src/assets/images', to: './public' }
       ]
     }),
 

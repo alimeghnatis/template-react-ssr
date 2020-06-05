@@ -1,9 +1,8 @@
-import './patchPreactSSR'
-import { h } from 'preact'
-
-//import React from 'react'
+import React from 'react'
 
 //import ReactDOMServer from 'react-dom/server' //Not in use if we use apollo own renderer
+//
+import { renderToStringWithData } from '@apollo/react-ssr'
 
 
 import { ApolloProvider } from '@apollo/react-hooks'
@@ -14,26 +13,15 @@ import { StaticRouter } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 
 import { getClient } from './graphql/getClientSSR'
-import { getMarkupFromTree  } from '@apollo/react-ssr'
 
 import App from 'site/App.js'
 
 import template from 'assets/html/index.prod.html'
 
-import render from 'preact-render-to-string' //By default we use apollo's renderer
-
 import stats from '../../public/loadable-stats.json'
 
 /* const statsFile = path.resolve(__dirname, '../dist/loadable-stats.json')
    We create an extractor from the statsFile */
-
-
-function renderToStringWithData(component) {
-  return getMarkupFromTree({
-    tree          :component,
-    renderFunction:render
-  })
-}
 
 const client = getClient(process.env.GRAPHQL_ENDPOINT)
 

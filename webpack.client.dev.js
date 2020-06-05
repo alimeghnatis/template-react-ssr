@@ -19,6 +19,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   resolve:{
     alias:{
+      'react'           :path.resolve('./node_modules/react'),
+      'react-dom'       :path.resolve('./node_modules/react-dom'),
+      'react-intl'      :path.resolve('./node_modules/react-intl'),
+      'react-router-dom':path.resolve('./node_modules/react-router-dom')
     }
   },
 
@@ -37,7 +41,10 @@ module.exports = {
     contentBase:[
       path.resolve(__dirname, './public'),
       path.resolve(__dirname, './src/assets/fonts'),
-      path.resolve(__dirname, './src/assets/images')
+      path.resolve(__dirname, './src/assets/images'),
+      path.resolve(__dirname, './src/assets/favicon'),
+      path.resolve(__dirname, './node_modules/@fwrlines/ds/src/assets/fonts'),
+      path.resolve(__dirname, './node_modules/@fwrlines/ds/src/assets/images')
     ],
     watchContentBase  :true,
     historyApiFallback:true,
@@ -48,6 +55,11 @@ module.exports = {
     clientLogLevel    :'debug',
     disableHostCheck  :true //rdp
   },
+
+  watchOptions:{
+    ignored:'/src/translations/'
+  },
+
   optimization:{
     usedExports:true
   },

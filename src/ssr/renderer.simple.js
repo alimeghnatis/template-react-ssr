@@ -1,9 +1,6 @@
-import './patchPreactSSR'
-import { h } from 'preact'
+import React from 'react'
 
-//import React from 'react'
-
-//import ReactDOMServer from 'react-dom/server' //Not in use if we use apollo own renderer
+import ReactDOMServer from 'react-dom/server' //Not in use if we use apollo own renderer
 
 
 import { ChunkExtractor } from '@loadable/server'
@@ -12,27 +9,28 @@ import { StaticRouter } from 'react-router-dom'
 
 import { Helmet } from 'react-helmet'
 
-console.log('in the imports')
-
-import App from 'site/App.simple.js'
-
-console.log('22 in the imports')
+import App from 'site/App.js'
 
 import template from 'assets/html/index.prod.html'
 
-import render from 'preact-render-to-string' //By default we use apollo's renderer
-
 import stats from '../../public/loadable-stats.json'
+
+import { SiteContextProvider } from '@fwrlines/ds'
+
+import { IntlProvider } from 'react-intl'
+
+import localizedMessages from 'translations/it.json'
+
+import siteContextConfig from 'config/siteContext'
 
 /* const statsFile = path.resolve(__dirname, '../dist/loadable-stats.json')
    We create an extractor from the statsFile */
 
-console.log('33 in the imports')
-
 const routerContext = {}
 
+const render = ReactDOMServer.renderToString
+
 export default async(req, res) => {
-  console.log('LAUNCH')
 
   const extractor = new ChunkExtractor({ stats })
 
@@ -41,18 +39,25 @@ export default async(req, res) => {
       location={req.url}
       context={routerContext}
     >
-      <App />
+      <SiteContextProvider
+        config={siteContextConfig}
+        initialTheme="system"
+      >
+        <IntlProvider
+          locale={'en'}
+          messages={localizedMessages}
+        >
+	        <App />
+        </IntlProvider>
+      </SiteContextProvider>
     </StaticRouter>
   )
-
-  console.log('We have the jsx')
 
   const html = await render(
     //extractor.collectChunks(appJsx)
     appJsx
   )
 
-  console.log('We have the html', html)
 
   /* eslint-disable no-console */
   console.log(req.method, ' ', req.baseUrl || req.url)

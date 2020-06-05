@@ -1,34 +1,26 @@
-const path = require('path')
-
 module.exports = function (api) {
-  api.cache(false)
+  //api.cache(false)
+
+  let isProd = api.cache(() => process.env.NODE_ENV === 'production')
 
   const presets = [
     [
       '@babel/preset-env',
+      //modules:'commonjs',
       {
-        //modules:'commonjs',
         targets:{
-          node:'12'
-        }
-        //debug:true
+          esmodules:true
+        },
+        debug:true
       }
     ],
-    //'@babel/preset-react'
-    'preact'
+    '@babel/preset-react'
   ]
   const plugins = [
     'inline-dotenv',
     [
       'module-resolver', {
-        root:['./src'],
-
-        alias:{
-          'react'               :path.resolve(__dirname, 'node_modules/preact/compat'),
-          'react-dom/test-utils':path.resolve(__dirname, 'node_modules/preact/test-utils'),
-          'react-dom'           :path.resolve(__dirname, 'node_modules/preact/compat')
-          // Must be below test-utils
-        }
+        root:['./src']
       }
     ],
     '@babel/plugin-proposal-class-properties',
@@ -42,24 +34,37 @@ module.exports = function (api) {
         ]
       }
     ],
-    ['@babel/plugin-transform-react-jsx', {
-      pragma          :'h', // default pragma is React.createElement
-      pragmaFrag      :'Fragment', // default is React.Fragment
-      throwIfNamespace:false // defaults to true
-    }],
+    [
+      'react-intl',
+      {
+        messagesDir:'./src/translations/messages'
+      }
+    ],
+    [
+      'react-intl-extractor',
+      {
+        extractedFile:'./src/translations/aggregated.json',
+        langFiles    :[{
+          path              :'./src/translations/it.json',
+          cleanUpNewMessages:true
+        }, {
+          path              :'./src/translations/en.json',
+          cleanUpNewMessages:false
+        }]
+      }
+    ],
     '@loadable/babel-plugin'
   ]
 
-  const ignore = [
-    '*.scss'
-  ]
+  isProd && plugins.push(
+    'transform-react-remove-prop-types',
+  )
 
   //['add-module-exports']
-  //
+
 
   return {
     presets,
-    plugins,
-    ignore
+    plugins
   }
 }

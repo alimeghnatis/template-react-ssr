@@ -19,6 +19,10 @@ const TerserPlugin = require('terser-webpack-plugin')
 module.exports = {
   resolve:{
     alias:{
+      'react'           :path.resolve('./node_modules/react'),
+      'react-dom'       :path.resolve('./node_modules/react-dom'),
+      'react-intl'      :path.resolve('./node_modules/react-intl'),
+      'react-router-dom':path.resolve('./node_modules/react-router-dom')
     },
     modules:[
       path.resolve(__dirname, './src'),
@@ -49,6 +53,10 @@ module.exports = {
     })
 
   ],
+
+  watchOptions:{
+    ignored:'/src/translations/'
+  },
 
   optimization:process.env.COMPILE ? {
     nodeEnv  :'production',

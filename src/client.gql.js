@@ -8,7 +8,16 @@ import { BrowserRouter } from 'react-router-dom'
 
 import { loadableReady } from '@loadable/component'
 
+import { SiteContextProvider } from '@fwrlines/ds'
+
+import { IntlProvider } from 'react-intl'
+
+import localizedMessages from 'translations/it.json'
+
+import siteContextConfig from 'config/siteContext'
+
 import App from 'site/App'
+
 
 //import Clock from 'components/Clock'
 
@@ -21,12 +30,23 @@ const client = getClient(process.env.GRAPHQL_ENDPOINT)
 
 const rootElement = document.getElementById('main')
 
+
 const jsx = (
   <ApolloProvider
     client={client}
   >
     <BrowserRouter>
-	    <App />
+      <SiteContextProvider
+        config={siteContextConfig}
+        initialTheme="system"
+      >
+        <IntlProvider
+          locale={'it'}
+          messages={localizedMessages}
+        >
+	        <App />
+        </IntlProvider>
+      </SiteContextProvider>
     </BrowserRouter>
   </ApolloProvider>
 )
