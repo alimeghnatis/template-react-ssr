@@ -1,9 +1,6 @@
-if (process.env.DEBUG === 'true') {
-  console.log('debug mode enabled')
-  require('preact/debug')
+import * as React from 'react'
+import ReactDOM from 'react-dom'
 
-}
-import { h, render, hydrate } from 'preact'
 
 import { ApolloProvider } from '@apollo/react-hooks'
 import { getClient } from 'graphql/getClient'
@@ -34,17 +31,18 @@ const jsx = (
   </ApolloProvider>
 )
 
+
 /* When main pagedelivered by SSR, not sure why, js is loaded twice for Loadable components
   console.log(rootElement.hasChildNodes(), rootElement.innerHTML) */
 
 loadableReady(() => {
   if (rootElement.hasChildNodes()) {
-    hydrate(
+    ReactDOM.hydrate(
       jsx,
       rootElement)
   }
   else {
-    render(
+    ReactDOM.render(
       jsx,
       rootElement)
   }
@@ -54,5 +52,4 @@ loadableReady(() => {
 
 if (module.hot) {
   module.hot.accept()
-  require('preact/debug')
 }

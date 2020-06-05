@@ -1,41 +1,66 @@
-import { h, Fragment } from 'preact'
-import { useState } from 'preact/hooks'
-import Clock from 'ui/AsyncClock'
-import QueryTester from 'ui/QueryTester'
-import { AnimatedVCaret } from '@fwrlines/ds'
+import React, { useState, useContext } from 'react'
+//import Prototypes from 'prototypes' //Capitalize, etc
+import { Switch, Redirect, Route, Link } from 'react-router-dom'
+
+//import NotFound from './NotFound.js'
+
+//import oAuth2Routes from './oauth2/routes'
+//import Clock from 'ui/test/AsyncClock'
+//import QueryTester from 'ui/test/QueryTester'
+//import { MyProfile } from 'ui/local/dashboardMain'
+
+import {
+  AnimatedVCaret,
+  SessionContext,
+  SwitchRouteMap
+} from '@fwrlines/ds'
+
+
+import routes from './allRoutes.js'
 
 const App = () => {
-  const [active, setActive] = useState(false)
+  //const [active, setActive] = useState(false)
+
+  const {
+    loginPath,
+    logoutPath
+  } = useContext(SessionContext)
+
   return (
     <>
-      <h1 className="x-primary c-x">Preact test</h1>
-      <h2>
-Includes
-        <AnimatedVCaret
-          active={active}
-          setActive={setActive}
-          id="myarrow"
-          width="200px"
-        />
-      </h2>
-      <ul>
-        <li>
-        SSR
-        </li>
-        <li>
-        Lighthouse 100/100 ootb
-        </li>
-        <li>
-        Apollo
-          <p>env vars are</p>
-          { process.env.GRAPHQL_ENDPOINT }
-        </li>
-      </ul>
-      <Clock
-        thing="thing"
-        thing2="thing2"
+      <SwitchRouteMap
+        routes={routes}
+        NotFound={<Redirect to={loginPath} />}
       />
-      <QueryTester />
+      {/*}
+      <MyProfile />
+              <Clock
+                thing="thing"
+                thing2="thing2"
+              />
+              {' '}
+              <QueryTester />
+Includes
+      <AnimatedVCaret
+        active={active}
+        setActive={setActive}
+        id="myarrow"
+        width="200px"
+      />
+      <nav>
+        <ul>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to={loginPath}>LOGIN</Link>
+          </li>
+          <li>
+            <Link to="/d/profile">My account</Link>
+          </li>
+        </ul>
+      </nav>
+      */}
     </>
   )
 }

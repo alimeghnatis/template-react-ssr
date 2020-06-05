@@ -1,15 +1,11 @@
-if (process.env.DEBUG === 'true') {
-  console.log('debug mode enabled')
-  require('preact/debug')
-
-}
-import { h, render, hydrate } from 'preact'
+import * as React from 'react'
+import ReactDOM from 'react-dom'
 
 import { BrowserRouter } from 'react-router-dom'
 
 import { loadableReady } from '@loadable/component'
 
-import App from 'site/App.simple'
+import App from 'site/App'
 
 //import Clock from 'components/Clock'
 
@@ -32,12 +28,12 @@ const jsx = (
 
 loadableReady(() => {
   if (rootElement.hasChildNodes()) {
-    hydrate(
+    ReactDOM.hydrate(
       jsx,
       rootElement)
   }
   else {
-    render(
+    ReactDOM.render(
       jsx,
       rootElement)
   }
