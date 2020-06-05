@@ -10,8 +10,8 @@ module.exports = function (api) {
       {
         targets:{
           esmodules:true
-        },
-        debug:true
+        }
+        //debug:true
       }
     ],
     '@babel/preset-react'

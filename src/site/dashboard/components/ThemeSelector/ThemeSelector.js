@@ -16,7 +16,13 @@ import messages from './messages'
 
 //Relative imports
 import styles from './theme_selector.scss'
-import('./theme_selector.scss')
+
+import { isBackend } from 'utils/isBackend'
+
+if (!isBackend) {
+  console.log('This is not backend')
+  import('./theme_selector.scss')
+}
 
 const baseClassName = 'theme_selector'
 

@@ -1,4 +1,3 @@
-import 'config/patchPreactSSR'
 import template from './template.xml'
 import CONFIG from 'config'
 import * as U from 'site/urls'

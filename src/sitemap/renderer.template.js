@@ -6,7 +6,7 @@ import { format } from 'date-fns'
 //import { request } from 'graphql-request'
 
 import {
-  urljoin as _u,
+  urljoin as _u
 } from 'utils'
 
 /* lastmod options
@@ -33,16 +33,16 @@ The default priority of a page is 0.5.
 */
 
 const STATIC_MAP = {
-  HOME: {
+  HOME:{
     changefreq:'yearly',
-    priority:.5,
-    lastmod: new Date('2019-10-02')
+    priority  :.5,
+    lastmod   :new Date('2019-10-02')
   },
-  ANOTHERPAGE: {
+  ANOTHERPAGE:{
     changefreq:'daily',
-    priority:.5,
-    lastmod: new Date('2019-09-12')
-  },
+    priority  :.5,
+    lastmod   :new Date('2019-09-12')
+  }
 }
 
 /*const GUIDES_CONFIG = {
@@ -182,7 +182,7 @@ export default async (req, res) => {
       loc,
       lastmod,
       changefreq,
-      priority,
+      priority
     })
   })
 
@@ -255,7 +255,7 @@ export default async (req, res) => {
   return res.send(
     template
       .replace('</urlset>', paths.reduce((a, { loc, lastmod, changefreq, priority }) => {
-        if(!process.env.COMPILE) console.log('LOOP', loc, lastmod, changefreq, priority)
+        if (!process.env.COMPILE) console.log('LOOP', loc, lastmod, changefreq, priority)
         return a +
           `
     <url>
@@ -268,6 +268,5 @@ export default async (req, res) => {
   )
 
 }
-
 
 
