@@ -52,7 +52,7 @@ module.exports = {
   plugins:[
     new BundleAnalyzerPlugin({
       analyzerMode  :'static',
-      reportFilename:(process.env.COMPILE ? 'report.html' : 'report.dev.html'),
+      reportFilename:('renderer.report.html'),
       openAnalyzer  :false
     }),
 
@@ -76,7 +76,7 @@ module.exports = {
   } : {},
 
   target   :'node',
-  mode     :'development',
+  mode     :'production',
   devtool  :'inline-cheap-source-map',
   externals:[nodeExternals()],
 
