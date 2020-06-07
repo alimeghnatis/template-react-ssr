@@ -11,14 +11,14 @@ module.exports = function (api) {
     [
       '@babel/preset-env',
       {
-        modules:isBackend ? 'cjs' : 'auto',
+        modules:isBackend ? false : 'auto',
         targets:isBackend ? {
           node:12
         } : {
           esmodules:true
         },
-        useBuiltIns:false,
-        debug      :true
+        //useBuiltIns:'usage',
+        debug:true
       }
     ],
     '@babel/preset-react'
@@ -70,14 +70,14 @@ module.exports = function (api) {
     '@loadable/babel-plugin'
   ]
 
-  isBackend && plugins.push([
+  false && isBackend && plugins.push([
     '@babel/plugin-transform-runtime',
     {
       absoluteRuntime:false,
       corejs         :false,
       helpers        :false,
       regenerator    :false,
-      useESModules   :false
+      useESModules   :true
     }
   ])
 

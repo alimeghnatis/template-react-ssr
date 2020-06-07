@@ -9,9 +9,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "client:dev:start": "webpack-dev-server --progress --config ./webpack.client.dev.js --watch",
-    "client:dev:compile": "webpack --config ./webpack.client.dev.js",
+    "client:dev:compile": "BACKEND=false webpack --config ./webpack.client.dev.js",
     "client:prod:start": "webpack-dev-server --progress --config ./webpack.client.prod.js --watch",
-    "client:prod:compile": "webpack --config ./webpack.client.prod.js",
+    "client:prod:compile": "BACKEND=false webpack --config ./webpack.client.prod.js",
     "cds": "npm run client:dev:start",
     "cdc": "npm run client:dev:compile",
     "cdcw": "npm run cdc -- -- --watch",

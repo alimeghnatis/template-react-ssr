@@ -2,8 +2,6 @@ import React from 'react'
 
 //import ReactDOMServer from 'react-dom/server' //Not in use if we use apollo own renderer
 //
-import patchAlias from './patchAlias2'
-
 import { renderToStringWithData } from '@apollo/react-ssr'
 
 
