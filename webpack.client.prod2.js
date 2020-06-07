@@ -8,6 +8,7 @@ function pascalToSnake(s){
     .replace(/^_/, '')
 }
 
+
 /* PLUGINS */
 
 
@@ -20,8 +21,6 @@ const TerserPlugin = require('terser-webpack-plugin')
 
 // C. PREPARE AND LIST FILES
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const ReactLoadableSSRAddon = require('react-loadable-ssr-addon')
-const LoadablePlugin = require('@loadable/webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 
 // D. SECURITY
@@ -34,23 +33,25 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
   resolve:{
+    // For npm link prototyping
     alias:{
-      'react'           :path.resolve('./node_modules/react'),
+      'react'           :path.resolve('./node_modules/react'),//NOT in use, for preact
       'react-dom'       :path.resolve('./node_modules/react-dom'),
       'react-intl'      :path.resolve('./node_modules/react-intl'),
       'react-router-dom':path.resolve('./node_modules/react-router-dom')
+      //'@apollo/react-hooks':path.resolve('./node_modules/@apollo/react-hooks'),
     }
   },
 
   entry:[
-    './src/client.gql.js'
-    //'./src/client.js'
+    './src/client.js'
   ],
 
   output:{
     path         :path.resolve(__dirname, 'public/'),
     publicPath   :'/',
-    filename     :( process.env.COMPILE ? '[name].js?[hash:8]' : 'main.js'),
+    //filename     :( '[name].js?[chunkhash:5]' ),
+    filename     :( '[name].js?[hash:8]' ),
     libraryTarget:'umd'
   },
 
@@ -62,18 +63,24 @@ module.exports = {
       path.resolve(__dirname, './src/assets/fonts'),
       path.resolve(__dirname, './src/assets/images'),
       path.resolve(__dirname, './src/assets/favicon'),
-      path.resolve(__dirname, './src/assets/other'),
       path.resolve(__dirname, './node_modules/@fwrlines/ds/src/assets/fonts'),
       path.resolve(__dirname, './node_modules/@fwrlines/ds/src/assets/images')
     ],
-    watchContentBase  :true,
+    watchContentBase  :false,
     historyApiFallback:true,
-    port              :3333,
+    port              :3344,
     host              :'0.0.0.0',
     hot               :true,
     liveReload        :false,
     clientLogLevel    :'debug',
-    disableHostCheck  :true //rdp
+    disableHostCheck  :true,//rdp
+    watchOptions      :{
+      ignored:[
+        path.resolve(__dirname, 'src', 'translations')
+        //path.resolve(__dirname, 'node_modules')
+      ]
+      //aggregateTimeout:3000
+    }
   },
 
   stats:{
@@ -82,12 +89,6 @@ module.exports = {
     entrypoints:false,
     children   :false
   },
-
-  
-  watchOptions:{
-    ignored:'/src/translations/'
-  },
-
 
   mode:'production',
 
@@ -145,22 +146,17 @@ module.exports = {
       template:'./src/assets/html/index.prod.html'
     }),
 
-    new CopyPlugin({
-      patterns:[
-        { from: './src/assets/fonts', to: './' }, //Where the root is the output dir
-        { from: './src/assets/images', to: './' },
-        { from: './src/assets/favicon', to: './' }, //https://www.favicon-generator.org/
-        { from: './src/assets/other', to: './' }, //https://www.favicon-generator.org/
-        { from: './node_modules/@fwrlines/ds/src/assets/fonts', to: './' },
-        { from: './node_modules/@fwrlines/ds/src/assets/images', to: './' }
-      ]
-    }),
-
-    new LoadablePlugin(),
+    new CopyPlugin([
+      { from: './src/assets/fonts', to: './public' },
+      { from: './src/assets/images', to: './public' },
+      { from: './src/assets/favicon', to: './public' }, //https://www.favicon-generator.org/
+      { from: './node_modules/@fwrlines/ds/src/assets/fonts', to: './public' },
+      { from: './node_modules/@fwrlines/ds/src/assets/images', to: './public' }
+    ]),
 
 	 new MiniCssExtractPlugin({
-      filename     :'[contenthash:5].css',
-      chunkFilename:'[contenthash:5].css'
+      //filename:'yabbi.css'
+      chunkFilename:'[name].css?[contenthash:5]'
     }),
 
     /*new LodashModuleReplacementPlugin({
@@ -171,12 +167,8 @@ module.exports = {
 
     new BundleAnalyzerPlugin({
       analyzerMode  :'static',
-      reportFilename:(process.env.COMPILE ? 'report.html' : 'report.dev.html'),
+      reportFilename:( 'report.html' ),
       openAnalyzer  :false
-    }),
-
-	  new ReactLoadableSSRAddon({
-      filename:'assets-manifest.json'
     }),
 
     new webpack.HotModuleReplacementPlugin()
