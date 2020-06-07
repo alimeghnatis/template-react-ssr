@@ -150,7 +150,7 @@ module.exports = {
         { from: './src/assets/fonts', to: './' }, //Where the root is the output dir
         { from: './src/assets/images', to: './' },
         { from: './src/assets/favicon', to: './' }, //https://www.favicon-generator.org/
-        { from: './src/assets/other', to: './' }, //https://www.favicon-generator.org/
+        { from: './src/assets/other', to: './' },
         { from: './node_modules/@fwrlines/ds/src/assets/fonts', to: './' },
         { from: './node_modules/@fwrlines/ds/src/assets/images', to: './' }
       ]
