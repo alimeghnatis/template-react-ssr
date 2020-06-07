@@ -16,9 +16,8 @@ module.exports = function (api) {
           node:12
         } : {
           esmodules:true
-        },
-        //useBuiltIns:'usage',
-        debug:true
+        }
+        //debug:true
       }
     ],
     '@babel/preset-react'
@@ -29,6 +28,8 @@ module.exports = function (api) {
       'module-resolver', {
         root :['./src'],
         alias:{
+          //Alias defined here create a weird bug where babel runtime imports esm helpers in cjs output mode
+          //Alias should be defined in webpack (dev-server or compile time) or in a module alias patch (nodemon babel-node)
         }
       }
     ],
@@ -64,17 +65,6 @@ module.exports = function (api) {
     ],
     '@loadable/babel-plugin'
   ]
-
-  false && isBackend && plugins.push([
-    '@babel/plugin-transform-runtime',
-    {
-      absoluteRuntime:false,
-      corejs         :false,
-      helpers        :false,
-      regenerator    :false,
-      useESModules   :true
-    }
-  ])
 
   isProd && plugins.push(
     'transform-react-remove-prop-types',

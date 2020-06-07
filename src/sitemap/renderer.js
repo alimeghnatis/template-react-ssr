@@ -1,3 +1,4 @@
+console.log('RDR')
 import template from './template.xml'
 import CONFIG from 'config'
 import * as U from 'site/urls'

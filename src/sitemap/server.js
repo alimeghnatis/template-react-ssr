@@ -1,6 +1,8 @@
 import express from 'express'
 import serverRenderer from './renderer'
-import * as U from 'site/urls'
+//import * as U from 'site/urls'
+//
+console.log('OK => Loading the sitemap dev server')
 
 const PORT = 3888
 

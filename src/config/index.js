@@ -1,7 +1,7 @@
 export default {
   SITE:{
     NAME     :'',
-    CANONICAL:'',
+    CANONICAL:'http://site.com',
     GA       :''
   },
   BUSINESS:{
