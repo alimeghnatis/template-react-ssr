@@ -11,7 +11,7 @@ module.exports = function (api) {
     [
       '@babel/preset-env',
       {
-        modules:isBackend ? false : 'auto',
+        modules:isBackend ? 'cjs' : 'auto',
         targets:isBackend ? {
           node:12
         } : {
