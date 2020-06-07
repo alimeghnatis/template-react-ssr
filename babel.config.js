@@ -5,6 +5,7 @@ module.exports = function (api) {
 
   let isProd = api.cache(() => process.env.NODE_ENV === 'production')
   let isBackend = process.env.BACKEND ==='true'
+  console.log(`OK => Compiling in Babel for production=${isProd} and isBackend=${isBackend}`)
 
   const presets = [
     [
@@ -15,8 +16,9 @@ module.exports = function (api) {
           node:12
         } : {
           esmodules:true
-        }
-        //debug:true
+        },
+        useBuiltIns:false,
+        debug      :true
       }
     ],
     '@babel/preset-react'
@@ -67,6 +69,17 @@ module.exports = function (api) {
     ],
     '@loadable/babel-plugin'
   ]
+
+  isBackend && plugins.push([
+    '@babel/plugin-transform-runtime',
+    {
+      absoluteRuntime:false,
+      corejs         :false,
+      helpers        :false,
+      regenerator    :false,
+      useESModules   :false
+    }
+  ])
 
   isProd && plugins.push(
     'transform-react-remove-prop-types',
