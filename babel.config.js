@@ -4,13 +4,16 @@ module.exports = function (api) {
   //api.cache(false)
 
   let isProd = api.cache(() => process.env.NODE_ENV === 'production')
+  let isBackend = process.env.BACKEND ==='true'
 
   const presets = [
     [
       '@babel/preset-env',
-      //modules:'commonjs',
       {
-        targets:{
+        modules:isBackend ? 'cjs' : 'auto',
+        targets:isBackend ? {
+          node:12
+        } : {
           esmodules:true
         }
         //debug:true
