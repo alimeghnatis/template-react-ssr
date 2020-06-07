@@ -1,4 +1,5 @@
 /* eslint-disable no-console */
+import patchAlias from './patchAlias'
 require('dotenv').config()
 import express from 'express'
 import serverRenderer from './renderer.gql.js'

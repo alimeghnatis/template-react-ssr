@@ -22,6 +22,7 @@ const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPl
 module.exports = {
   resolve:{
     alias:{
+      'apollo-client'   :path.resolve('./node_modules/@apollo/client'),
       'react'           :path.resolve('./node_modules/react'),
       'react-dom'       :path.resolve('./node_modules/react-dom'),
       'react-intl'      :path.resolve('./node_modules/react-intl'),

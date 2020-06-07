@@ -2,17 +2,19 @@ import React from 'react'
 
 //import ReactDOMServer from 'react-dom/server' //Not in use if we use apollo own renderer
 //
+import patchAlias from './patchAlias2'
+
 import { renderToStringWithData } from '@apollo/react-ssr'
 
 
-import { ApolloProvider } from '@apollo/react-hooks'
+import { ApolloProvider } from '@apollo/client'
 import { ChunkExtractor } from '@loadable/server'
 
 import { StaticRouter } from 'react-router-dom'
 
 import { Helmet } from 'react-helmet'
 
-import { getClient } from './graphql/getClientSSR'
+import { getClient } from 'graphql/getClientSSR'
 
 import App from 'site/App.js'
 

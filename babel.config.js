@@ -1,3 +1,5 @@
+let path = require('path')
+
 module.exports = function (api) {
   //api.cache(false)
 
@@ -20,7 +22,14 @@ module.exports = function (api) {
     'inline-dotenv',
     [
       'module-resolver', {
-        root:['./src']
+        root :['./src'],
+        alias:{
+
+          'react'           :path.resolve('./node_modules/react'),
+          'react-dom'       :path.resolve('./node_modules/react-dom'),
+          'react-intl'      :path.resolve('./node_modules/react-intl'),
+          'react-router-dom':path.resolve('./node_modules/react-router-dom')
+        }
       }
     ],
     '@babel/plugin-proposal-class-properties',
