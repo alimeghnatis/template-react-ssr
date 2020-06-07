@@ -27,7 +27,7 @@ module.exports = {
   },
 
   entry:[
-    './src/client.simple.js'
+    './src/client.gql.js'
     //'./src/client.js'
   ],
   output:{

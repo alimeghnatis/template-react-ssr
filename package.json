@@ -18,7 +18,7 @@
     "cps": "npm run client:prod:start",
     "cpc": "npm run client:prod:compile",
     "cpcw": "npm run cpc -- -- --watch",
-    "renderer:start": "nodemon src/ssr/server.simple.js",
+    "renderer:start": "nodemon src/ssr/server.gql.js",
     "renderer:compile": "COMPILE=true webpack --config ./webpack.renderer.js",
     "sitemap:start": "nodemon src/sitemap/server.js",
     "sitemap:compile": "COMPILE=true webpack --config ./webpack.sitemap.js",
@@ -31,7 +31,7 @@
     "deploy-commit": "git add . && git commit -m '[Auto] Compile and deploy from cli' && git push",
     "build:deploy": "npm run build && npm run deploy-commit",
     "bd": "npm run build:deploy",
-    "test-eslint": "eslint src/client.simple.js"
+    "test-eslint": "eslint src/client.gql.js"
   },
   "repository": {
     "type": "git",

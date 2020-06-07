@@ -1,5 +1,5 @@
 {
-  "app.auth.pages.login.subtitle": "Login below to your dashboard account",
+  "app.auth.pages.login.subtitle": "Login here to your dashboard account",
   "app.auth.pages.login.title": "Dashboard Access",
   "app.auth.pages.unauthorized.contact": "you can contact support here.",
   "app.auth.pages.unauthorized.explanation": "You can try to login with another account. Alternatively, if you believe this is a mistake",
@@ -25,5 +25,9 @@
   "app.dashboard.theme_selector.dark_theme": "Dark",
   "app.dashboard.theme_selector.light_theme": "Light",
   "app.dashboard.theme_selector.system_theme": "System",
-  "app.dashboard.theme_selector.theme": "Theme"
+  "app.dashboard.theme_selector.theme": "Theme",
+  "ds.site.paginator.next": "Older",
+  "ds.site.paginator.previous": "Newer",
+  "ds.oauth2.o_login_button.login": "Login with {providerName}",
+  "ds.dashboard.navigation.horizontal_bar.back": "Back"
 }

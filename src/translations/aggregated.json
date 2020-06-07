@@ -2,7 +2,7 @@
   {
     "id": "app.auth.pages.login.subtitle",
     "description": "Subtitle for the login page",
-    "defaultMessage": "Login below to your dashboard account"
+    "defaultMessage": "Login here to your dashboard account"
   },
   {
     "id": "app.auth.pages.login.title",
@@ -133,5 +133,25 @@
     "id": "app.dashboard.theme_selector.theme",
     "description": "Label for the theme selector",
     "defaultMessage": "Theme"
+  },
+  {
+    "id": "ds.dashboard.navigation.horizontal_bar.back",
+    "description": "Navigation back button",
+    "defaultMessage": "Back"
+  },
+  {
+    "id": "ds.oauth2.o_login_button.login",
+    "description": "Label for the oauth2 login button",
+    "defaultMessage": "Login with {providerName}"
+  },
+  {
+    "id": "ds.site.paginator.next",
+    "description": "Next button on the paginator",
+    "defaultMessage": "Older"
+  },
+  {
+    "id": "ds.site.paginator.previous",
+    "description": "Previous button on the paginator",
+    "defaultMessage": "Newer"
   }
 ]

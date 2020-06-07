@@ -25,5 +25,9 @@
   "app.dashboard.theme_selector.dark_theme": "",
   "app.dashboard.theme_selector.light_theme": "",
   "app.dashboard.theme_selector.system_theme": "",
-  "app.dashboard.theme_selector.theme": ""
+  "app.dashboard.theme_selector.theme": "",
+  "ds.site.paginator.next": "",
+  "ds.site.paginator.previous": "",
+  "ds.oauth2.o_login_button.login": "",
+  "ds.dashboard.navigation.horizontal_bar.back": ""
 }

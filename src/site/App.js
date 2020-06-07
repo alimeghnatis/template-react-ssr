@@ -13,7 +13,8 @@ import {
   AnimatedVCaret,
   Paginator,
   HorizontalBar,
-  SwitchRouteMap
+  SwitchRouteMap,
+  GraphQLTester
 } from '@fwrlines/ds'
 
 /* @fwrlines/generator-react-component 2.2.3 */
@@ -70,6 +71,7 @@ const App = () => {
         id="myarrow"
         width="200px"
       />
+      <GraphQLTester />
       <SwitchRouteMap
         routes={routes}
         NotFound={<Redirect to={'404'} />}
