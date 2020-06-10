@@ -9,7 +9,7 @@ import { StaticRouter } from 'react-router-dom'
 
 import { Helmet } from 'react-helmet'
 
-import App from 'site/App.js'
+import App from 'app/App.js'
 
 import template from 'assets/html/index.prod.html'
 

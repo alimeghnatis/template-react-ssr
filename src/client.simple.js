@@ -11,7 +11,7 @@ import { IntlProvider } from 'react-intl'
 
 import localizedMessages from 'translations/en.json'
 
-import App from 'site/App'
+import App from 'app/App'
 
 import siteContextConfig from 'config/siteContext'
 

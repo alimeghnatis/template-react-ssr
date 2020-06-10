@@ -16,7 +16,7 @@ import localizedMessages from 'translations/it.json'
 
 import siteContextConfig from 'config/siteContext'
 
-import App from 'site/App'
+import App from 'app/App'
 
 
 //import Clock from 'components/Clock'

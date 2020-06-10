@@ -14,7 +14,7 @@ import { Helmet } from 'react-helmet'
 
 import { getClient } from 'graphql/getClientSSR'
 
-import App from 'site/App.js'
+import App from 'app/App.js'
 
 import template from 'assets/html/index.prod.html'
 

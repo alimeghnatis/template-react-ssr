@@ -1,7 +1,7 @@
 console.log('RDR')
 import template from './template.xml'
 import CONFIG from 'config'
-import * as U from 'site/urls'
+import * as U from 'app/urls'
 
 import { format } from 'date-fns'
 //import { request } from 'graphql-request'
