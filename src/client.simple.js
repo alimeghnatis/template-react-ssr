@@ -12,7 +12,8 @@ import BaseApp from 'app/BaseApp'
 
 import(
 
-  /* webpackChunkName:'blublublu' */
+  /* webpackPreload:true */
+  /* webpackChunkName:'main' */
   '@fwrlines/alphabet-scss/main.scss'
 )
 
