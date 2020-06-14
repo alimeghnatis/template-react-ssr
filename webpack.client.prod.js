@@ -72,7 +72,7 @@ module.exports = {
     host              :'0.0.0.0',
     hot               :true,
     liveReload        :false,
-    clientLogLevel    :'debug',
+    clientLogLevel    :'warning',
     disableHostCheck  :true //rdp
   },
 
@@ -161,8 +161,8 @@ module.exports = {
     new LoadablePlugin(),
 
 	 new MiniCssExtractPlugin({
-      filename:'main.css?[contenthash:5]'
-      //chunkFilename:'[name].css?[contenthash:5]'
+      filename     :'main.css?[contenthash:5]',
+      chunkFilename:'[name].css?[contenthash:5]'
     }),
 
     /*new LodashModuleReplacementPlugin({

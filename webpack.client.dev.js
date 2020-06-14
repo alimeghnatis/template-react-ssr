@@ -53,7 +53,7 @@ module.exports = {
     host              :'0.0.0.0',
     hot               :true,
     liveReload        :false,
-    clientLogLevel    :'debug',
+    clientLogLevel    :'warning',
     disableHostCheck  :true //rdp
   },
 
