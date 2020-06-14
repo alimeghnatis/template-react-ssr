@@ -29,5 +29,7 @@
   "ds.site.paginator.next": "",
   "ds.site.paginator.previous": "",
   "ds.oauth2.o_login_button.login": "",
-  "ds.dashboard.navigation.horizontal_bar.back": ""
+  "ds.dashboard.navigation.horizontal_bar.back": "",
+  "ds.collections.saas.plan.price.free": "",
+  "ds.collections.saas.plan.price.monthly": ""
 }

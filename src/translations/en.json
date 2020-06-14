@@ -29,5 +29,7 @@
   "ds.site.paginator.next": "Older",
   "ds.site.paginator.previous": "Newer",
   "ds.oauth2.o_login_button.login": "Login with {providerName}",
-  "ds.dashboard.navigation.horizontal_bar.back": "Back"
+  "ds.dashboard.navigation.horizontal_bar.back": "Back",
+  "ds.collections.saas.plan.price.free": "Free",
+  "ds.collections.saas.plan.price.monthly": "/month"
 }
