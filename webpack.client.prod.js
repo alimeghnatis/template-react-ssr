@@ -100,7 +100,7 @@ module.exports = {
     runtimeChunk:'single',
 
     splitChunks:{
-      chunks            :'all',
+      chunks            :(chunk) => chunk.name !== 'styles',
       maxInitialRequests:Infinity,
       minSize           :0,
       cacheGroups       :{
