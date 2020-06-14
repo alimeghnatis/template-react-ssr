@@ -63,7 +63,7 @@ const App = () => {
     <>
       <h1 className="x-primary c-x">Hello there</h1>
       <Paginator paginator={{ totalPages: 200, page: 77 }} />
-      <HorizontalBar>iHey</HorizontalBar>
+      <HorizontalBar>Hey</HorizontalBar>
       <FormattedMessage {...messages.unauthorizedContact} />
       <AnimatedVCaret
         active={active}
