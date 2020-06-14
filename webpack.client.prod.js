@@ -161,7 +161,7 @@ module.exports = {
     new LoadablePlugin(),
 
 	 new MiniCssExtractPlugin({
-      filename     :'[name].css?[contenthash:5]',
+      filename     :'main.css?[contenthash:5]',
       chunkFilename:'[name].css?[contenthash:5]'
     }),
 
@@ -202,8 +202,12 @@ module.exports = {
         test:/\.(scss|css)$/,
         use :[
           {
-            loader:MiniCssExtractPlugin.loader
-          }, {
+            loader :MiniCssExtractPlugin.loader,
+            options:{
+              esModule:true
+            }
+          },
+          {
             loader:'css-loader'
           }, {
             loader:'postcss-loader'
