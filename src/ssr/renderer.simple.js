@@ -39,17 +39,7 @@ export default async(req, res) => {
       location={req.url}
       context={routerContext}
     >
-      <SiteContextProvider
-        config={siteContextConfig}
-        initialTheme="system"
-      >
-        <IntlProvider
-          locale={'en'}
-          messages={localizedMessages}
-        >
-	        <BaseApp />
-        </IntlProvider>
-      </SiteContextProvider>
+	    <BaseApp />
     </StaticRouter>
   )
 
