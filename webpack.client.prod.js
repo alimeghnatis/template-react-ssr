@@ -103,7 +103,7 @@ module.exports = {
       chunks            :'all',
       maxInitialRequests:Infinity,
       minSize           :0,
-      cacheGroups       :{
+      cacheGroups       :false ? {
         fwrlines:{
           chunks  :'all',
           priority:100,
@@ -135,7 +135,7 @@ module.exports = {
             return `npm.${packageName.replace('@', '')}`
           }
         }
-      }
+      } : {}
     }
   },
 
