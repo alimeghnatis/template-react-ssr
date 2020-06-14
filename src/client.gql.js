@@ -14,11 +14,7 @@ import BaseApp from 'app/BaseApp'
 //import Clock from 'components/Clock'
 
 
-import(
-
-  /* webpackChunkName:'blublublu' */
-  '@fwrlines/alphabet-scss/main.scss'
-)
+import '@fwrlines/alphabet-scss/main.scss'
 
 //const isProduction = !(process.env.DEBUG === 'true')
 
@@ -32,7 +28,7 @@ const jsx = (
     client={client}
   >
     <BrowserRouter>
-	        <BaseApp />
+	    <BaseApp />
     </BrowserRouter>
   </ApolloProvider>
 )
