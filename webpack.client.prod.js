@@ -103,7 +103,8 @@ module.exports = {
       chunks            :'all',
       maxInitialRequests:Infinity,
       minSize           :0,
-      cacheGroups       :false ? {
+      cacheGroups       :{
+        /*
         fwrlines:{
           chunks  :'all',
           priority:100,
@@ -120,7 +121,7 @@ module.exports = {
             }
             return 'ds.main'
           }
-        },
+        },*/
         
 
         vendor:{
@@ -135,7 +136,7 @@ module.exports = {
             return `npm.${packageName.replace('@', '')}`
           }
         }
-      } : {}
+      }
     }
   },
 
