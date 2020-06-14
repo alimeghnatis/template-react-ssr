@@ -28,7 +28,7 @@ const jsx = (
     client={client}
   >
     <BrowserRouter>
-	        <App />
+	        <BaseApp />
     </BrowserRouter>
   </ApolloProvider>
 )
