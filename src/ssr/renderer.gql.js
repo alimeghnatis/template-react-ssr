@@ -14,7 +14,7 @@ import { Helmet } from 'react-helmet'
 
 import { getClient } from 'graphql/getClientSSR'
 
-import App from 'app/App.js'
+import BaseApp from 'app/BaseApp.js'
 
 import template from 'assets/html/index.prod.html'
 
@@ -39,7 +39,7 @@ export default async(req, res) => {
         location={req.url}
         context={routerContext}
       >
-        <App />
+        <BaseApp />
       </StaticRouter>
     </ApolloProvider>
   )

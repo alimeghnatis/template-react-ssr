@@ -9,7 +9,7 @@ import { StaticRouter } from 'react-router-dom'
 
 import { Helmet } from 'react-helmet'
 
-import App from 'app/App.js'
+import BaseApp from 'app/BaseApp.js'
 
 import template from 'assets/html/index.prod.html'
 
@@ -47,7 +47,7 @@ export default async(req, res) => {
           locale={'en'}
           messages={localizedMessages}
         >
-	        <App />
+	        <BaseApp />
         </IntlProvider>
       </SiteContextProvider>
     </StaticRouter>
