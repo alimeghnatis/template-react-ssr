@@ -73,7 +73,7 @@ return"./src/app/auth/pages/Unauthorized.js"}})}];t.default=p},"./src/app/auth/u
 /*!******************************!*\
   !*** ./src/utils/urljoin.js ***!
   \******************************/
-/*! no static exports found */function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var n=function(...e){let t,r;return r="*"!=e[-1]||e[-1].endsWith("/")?"/":"",t=e[0].startsWith("http")||e[0].startsWith("/")?"":"/",t+e.join("/")+r};t.default=n},0:
+/*! no static exports found */function(e,t,r){"use strict";Object.defineProperty(t,"__esModule",{value:!0}),t.default=void 0;var n=function(...e){return e.filter(e=>e).reduce((t,r,n)=>{let o=r;return r.startsWith("/")&&n>0&&(o=r.substring(1)),r.endsWith("/")&&n<e.length-1&&(o=r.substring(0,r.length-1)),t.push(o),t},[]).join("/")};t.default=n},0:
 /*!***************************************!*\
   !*** multi ./src/sitemap/renderer.js ***!
   \***************************************/
