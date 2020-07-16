@@ -14,6 +14,7 @@ import {
   Paginator,
   HorizontalBar,
   SwitchRouteMap,
+  RedirectWithStatus,
   GraphQLTester
 } from '@fwrlines/ds'
 
@@ -74,7 +75,10 @@ const App = () => {
       <GraphQLTester />
       <SwitchRouteMap
         routes={routes}
-        NotFound={<Redirect to={'404'} />}
+        NotFound={<RedirectWithStatus
+          status={404}
+          to={'/404'}
+                  />}
       />
       {/*}
       <MyProfile />
