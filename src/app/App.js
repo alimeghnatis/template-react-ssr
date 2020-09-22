@@ -75,10 +75,12 @@ const App = () => {
       <GraphQLTester />
       <SwitchRouteMap
         routes={routes}
+        /*
         NotFound={<RedirectWithStatus
           status={404}
           to={'/404'}
                   />}
+         */
       />
       {/*}
       <MyProfile />
