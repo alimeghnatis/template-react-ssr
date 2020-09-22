@@ -16,7 +16,7 @@ import { getClient } from 'graphql/getClientSSR'
 
 import BaseApp from 'app/BaseApp.js'
 
-import template from 'assets/html/index.prod.html'
+import template from '../../public/index.html'
 
 import stats from '../../public/loadable-stats.json'
 

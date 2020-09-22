@@ -11,7 +11,7 @@ import { Helmet } from 'react-helmet'
 
 import BaseApp from 'app/BaseApp'
 
-import template from 'assets/html/index.prod.html'
+import template from '../../public/index.html'
 
 import stats from '../../public/loadable-stats.json'
 
