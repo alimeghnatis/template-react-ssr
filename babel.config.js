@@ -5,7 +5,11 @@ module.exports = function (api) {
 
   let isProd = api.cache(() => process.env.NODE_ENV === 'production')
   let isBackend = process.env.BACKEND ==='true'
-  console.log(`OK => Compiling in Babel for production=${isProd} and isBackend=${isBackend}`)
+  let isCompileForSSR = process.env.COMPILE_FOR_SSR === 'true'
+  console.log(`OK => Compiling in Babel`)
+  console.log(`OK => NODE_ENV=${isProd} (used as isProd)`)
+  console.log(`OK => BACKEND=${isBackend} (used as isBackend)`)
+  console.log(`OK => COMPILE_FOR_SSR=${isCompileForSSR} (used as isCompileForSSR)`)
 
   const presets = [
     [

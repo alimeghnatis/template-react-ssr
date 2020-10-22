@@ -26,7 +26,7 @@
     "rc": "BACKEND=true npm run renderer:compile",
     "ss": "BACKEND=true npm run sitemap:start",
     "sc": "BACKEND=true npm run sitemap:compile",
-    "build:local": "npm run cpc && npm run rc && npm run sc",
+    "build:local": "COMPILE_FOR_SSR=true npm run cpc && npm run rc && npm run sc",
     "old:now-build": "npm run cpc",
     "deploy-commit": "git add . && git commit -m '[Auto] Compile and deploy from cli' && git push",
     "build:deploy": "npm run build:local && npm run deploy-commit",

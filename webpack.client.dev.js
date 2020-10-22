@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 
+let isCompileForSSR = process.env.COMPILE_FOR_SSR ==='true'
 
 /* PLUGINS */
 
@@ -70,7 +71,9 @@ module.exports = {
   plugins:[
 
     new HtmlWebpackPlugin({
-      template:'./src/assets/html/index.dev.html'
+      template:'./src/assets/html/index.dev.html',
+      //If we compile for SSR, the chunks to load will be added by the renderer depending on the page to load
+      chunks  :isCompileForSSR ? [] : undefined
     }),
 
     /*
