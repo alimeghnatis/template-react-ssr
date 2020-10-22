@@ -1,6 +1,6 @@
 {
   "name": "template-react-ssr",
-  "version": "2.2.1",
+  "version": "2.3.0",
   "description": "",
   "main": "public/index.js",
   "engines": {
@@ -33,7 +33,6 @@
     "bd": "npm run build:deploy",
     "test-eslint": "eslint src/client.gql.js",
     "relink": "npm link @fwrlines/ds && npm link @fwrlines/ds.core && npm link @fwrlines/ds.contrib && npm link @fwrlines/ds.form && npm link @fwrlines/alphabet-scss && npm link @fwrlines/swatch && npm link @fwrlines/utils"
-
   },
   "repository": {
     "type": "git",
