@@ -8,6 +8,8 @@ function pascalToSnake(s){
     .replace(/^_/, '')
 }
 
+let isCompileForSSR = process.env.COMPILE_FOR_SSR ==='true'
+
 /* PLUGINS */
 
 
@@ -145,7 +147,9 @@ module.exports = {
   plugins:[
 
     new HtmlWebpackPlugin({
-      template:'./src/assets/html/index.prod.html'
+      template:'./src/assets/html/index.prod.html',
+      //If we compile for SSR, the chunks to load will be added by the renderer depending on the page to load
+      chunks  :isCompileForSSR ? [] : undefined
     }),
 
     new CopyPlugin({
