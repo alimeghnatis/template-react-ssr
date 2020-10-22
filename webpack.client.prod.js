@@ -64,8 +64,8 @@ module.exports = {
       path.resolve(__dirname, './src/assets/images'),
       path.resolve(__dirname, './src/assets/favicon'),
       path.resolve(__dirname, './src/assets/other'),
-      path.resolve(__dirname, './node_modules/@fwrlines/ds/src/assets/fonts'),
-      path.resolve(__dirname, './node_modules/@fwrlines/ds/src/assets/images')
+      path.resolve(__dirname, './node_modules/@fwrlines/ds.core/src/assets/fonts'),
+      path.resolve(__dirname, './node_modules/@fwrlines/ds.core/src/assets/images')
     ],
     watchContentBase  :true,
     historyApiFallback:true,
@@ -154,8 +154,8 @@ module.exports = {
         { from: './src/assets/images', to: './' },
         { from: './src/assets/favicon', to: './' }, //https://www.favicon-generator.org/
         { from: './src/assets/other', to: './' },
-        { from: './node_modules/@fwrlines/ds/src/assets/fonts', to: './' },
-        { from: './node_modules/@fwrlines/ds/src/assets/images', to: './' }
+        { from: './node_modules/@fwrlines/ds.core/src/assets/fonts', to: './' },
+        { from: './node_modules/@fwrlines/ds.core/src/assets/images', to: './' }
       ]
     }),
 
@@ -220,6 +220,18 @@ module.exports = {
                 includePaths:['./node_modules']
               }
             }
+          }
+        ]
+      },
+      {
+        test:/\.(png|svg|jpg|gif|jpe?g)$/,
+        use :[
+          {
+            options:{
+              name      :'[name].[ext]',
+              outputPath:'images/'
+            },
+            loader:'file-loader'
           }
         ]
       }
