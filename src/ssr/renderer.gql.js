@@ -36,7 +36,7 @@ export default async(req, res) => {
       client={client}
     >
       <StaticRouter
-        location={req.url}
+        location={req.originalUrl || req.url}
         context={routerContext}
       >
         <BaseApp />
@@ -49,7 +49,7 @@ export default async(req, res) => {
   )
 
   /* eslint-disable no-console */
-  console.log(req.method, ' ', req.baseUrl || req.url)
+  console.log(req.method, ' ', req.originalUrl || req.url, JSON.stringify(routerContext))
   /* eslint-enable no-console */
 
 

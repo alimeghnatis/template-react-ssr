@@ -7,7 +7,7 @@ module.exports = function (api) {
   let isBackend = process.env.BACKEND ==='true'
   let isCompileForSSR = process.env.COMPILE_FOR_SSR === 'true'
   console.log(`OK => Compiling in Babel`)
-  console.log(`OK => NODE_ENV=${isProd} (used as isProd)`)
+  console.log(`OK => NODE_ENV=${process.env.NODE_END} (used as isProd=${isProd})`)
   console.log(`OK => BACKEND=${isBackend} (used as isBackend)`)
   console.log(`OK => COMPILE_FOR_SSR=${isCompileForSSR} (used as isCompileForSSR)`)
 
