@@ -15,7 +15,8 @@ import {
   HorizontalBar,
   SwitchRouteMap,
   RedirectWithStatus,
-  GraphQLTester
+  GraphQLTester,
+  useSite
 } from '@fwrlines/ds'
 
 /* @fwrlines/generator-react-component 2.2.3 */
@@ -59,6 +60,10 @@ import routes from './allRoutes.js'
 
 const App = () => {
   const [active, setActive] = useState(false)
+
+  const {
+    userTheme
+  } = useSite()
 
   return (
     <>
