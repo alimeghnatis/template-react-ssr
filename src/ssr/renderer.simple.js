@@ -55,12 +55,10 @@ export default async(req, res) => {
   // You can also collect your "preload/prefetch" links
 
   const linkTags = extractor.getLinkTags() // or extractor.getLinkElements();
-  console.log('LINK', extractor.getLinkTags())
 
   // And you can even collect your style tags (if you use "mini-css-extract-plugin")
 
   const styleTags = extractor.getStyleTags() // or extractor.getStyleElements();
-  console.log('STYLE', extractor.getStyleTags())
 
   const helmet = Helmet.renderStatic()
 
