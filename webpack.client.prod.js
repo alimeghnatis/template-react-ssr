@@ -92,8 +92,9 @@ module.exports = {
   },
 
 
-  mode:'production',
+  mode:'development',
 
+  /*
   optimization:{
     nodeEnv  :'production',
     minimize :true,
@@ -126,7 +127,6 @@ module.exports = {
         }
         
 
-        /*
         vendor:{
           //priority:-10,
           test:/[\\/]node_modules[\\/]/,
@@ -139,10 +139,10 @@ module.exports = {
             return `npm.${packageName.replace('@', '')}`
           }
         }
-        */
       }
     }
   },
+  */
 
   plugins:[
 
