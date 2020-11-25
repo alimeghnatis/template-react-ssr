@@ -26,11 +26,13 @@ const ReactLoadableSSRAddon = require('react-loadable-ssr-addon')
 const LoadablePlugin = require('@loadable/webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 
+
 // D. SECURITY
 //const Dotenv = require('dotenv-webpack')
 
 /* E. EXTRA
    const NullPlugin = require('webpack-null-plugin') */
+const PreloadWebpackPlugin = require('preload-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 // https://momentjs.com/docs/
 
@@ -146,11 +148,18 @@ module.exports = {
 
   plugins:[
 
+    new PreloadWebpackPlugin({
+      rel          :'preload',
+      include      :'allAssets',
+      fileBlacklist:[/\.(js|ttf|png|eot|css|jpe?g|svg)/]
+    }),
+
     new HtmlWebpackPlugin({
       template:'./src/assets/html/index.prod.html',
       //If we compile for SSR, the chunks to load will be added by the renderer depending on the page to load
       chunks  :isCompileForSSR ? [] : undefined
     }),
+
 
     new CopyPlugin({
       patterns:[
