@@ -11,7 +11,7 @@
     "client:dev:start": "webpack-dev-server --progress --config ./webpack.client.dev.js --watch",
     "client:dev:compile": "BACKEND=false webpack --config ./webpack.client.dev.js",
     "client:prod:start": "webpack-dev-server --progress --config ./webpack.client.prod.js --watch",
-    "client:prod:compile": "COMPILE=true BACKEND=false webpack --config ./webpack.client.prod.js",
+    "client:prod:compile": "COMPILE_FOR_SSR=true COMPILE=true BACKEND=false webpack --config ./webpack.client.prod.js",
     "cds": "npm run client:dev:start",
     "cdc": "npm run client:dev:compile",
     "cdcw": "npm run cdc -- -- --watch",
