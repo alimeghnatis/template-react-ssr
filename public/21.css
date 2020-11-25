@@ -1,0 +1,1 @@
+.action_grid{display:grid;grid-template-columns:auto -webkit-max-content;grid-template-columns:auto max-content;position:relative;z-index:5}.action_grid .actions .button{display:-webkit-box;display:flex;-webkit-box-pack:justify;justify-content:space-between}

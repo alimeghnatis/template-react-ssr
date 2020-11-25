@@ -1,0 +1,1 @@
+.downshift_select .button{overflow:visible}.downshift_select .popup{border-radius:var(--r);background:var(--z,var(--light-background));box-shadow:var(--shadow);outline:none;z-index:1}.downshift_select .popup ul{margin:0;max-height:300px;overflow-y:scroll}.downshift_select .popup ul:focus{outline:none}

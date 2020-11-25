@@ -1,0 +1,1 @@
+.keys .key{border:1px solid var(--x,var(--subtitle));border-radius:var(--r);color:var(--x,var(--subtitle));display:inline-block;height:2em;padding-left:.2em;width:2em}.keys .key+.key{margin-left:.15em}.keys .key.long{width:4em}

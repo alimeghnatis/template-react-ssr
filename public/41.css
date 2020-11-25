@@ -1,0 +1,1 @@
+.animated_v_caret{cursor:pointer;display:inline}.animated_v_caret line{-webkit-transition:stroke .3s;transition:stroke .3s}.animated_v_caret.active line,.animated_v_caret line{stroke:var(--x,var(--paragraph))}

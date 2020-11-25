@@ -1,0 +1,1 @@
+.type_button .popup{border-radius:var(--r);max-height:200px;overflow:hidden;-ms-overflow-style:none;overflow-y:scroll;scrollbar-width:none;width:200px;z-index:1}.type_button .popup::-webkit-scrollbar{display:none}

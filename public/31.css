@@ -1,0 +1,1 @@
+.associations_view .belongs-to,.associations_view .has-many,.associations_view .has-one{display:grid;-webkit-box-pack:center;justify-content:center;grid-template-columns:repeat(auto-fit,minmax(300px,400px));grid-gap:calc(var(--u, 1)*0.5em)}

@@ -1,0 +1,1 @@
+svg.progress_bar{top:0;width:100%}svg.progress_bar [id^=active]{stroke-dashoffset:var(--stroke-dashoffset,50);-webkit-transition:all .3s;transition:all .3s}svg.progress_bar rect[id^=pb_back]{fill:var(--x,var(--primary))}
