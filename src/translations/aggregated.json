@@ -2,7 +2,7 @@
   {
     "id": "app.auth.pages.login.subtitle",
     "description": "Subtitle for the login page",
-    "defaultMessage": "Login below to your dashboard account"
+    "defaultMessage": "Login here to your dashboard account"
   },
   {
     "id": "app.auth.pages.login.title",
@@ -135,6 +135,23 @@
     "defaultMessage": "Theme"
   },
   {
+    "id": "app.default.graphqlInstalled",
+    "defaultMessage": "This app uses GraphQL at endpoint {endpoint}. A hello message from the server should appear below."
+  },
+  {
+    "id": "app.default.graphqlNotInstalled",
+    "defaultMessage": "This app does not use GraphQL."
+  },
+  {
+    "id": "app.default.successfullyInstalled",
+    "defaultMessage": "If you're seeing this, it means the application runs correctly."
+  },
+  {
+    "id": "app.default.welcome",
+    "description": "Default message",
+    "defaultMessage": "Welcome to { name } version { version }"
+  },
+  {
     "id": "ds.collections.blog.article_card.cta",
     "description": "The CTA at the bottom of the article cards",
     "defaultMessage": "Read more"
@@ -214,9 +231,24 @@
     "defaultMessage": "/month"
   },
   {
+    "id": "ds.common.shortener.read_more",
+    "description": "Read more on the shortener",
+    "defaultMessage": "Read more."
+  },
+  {
+    "id": "ds.common.shortener.show",
+    "description": "Used on the minimal version of the shortener",
+    "defaultMessage": "Show"
+  },
+  {
     "id": "ds.dashboard.navigation.horizontal_bar.back",
     "description": "Navigation back button",
     "defaultMessage": "Back"
+  },
+  {
+    "id": "ds.form.input_label.optional",
+    "description": "What appears after a form label when the input is optional",
+    "defaultMessage": "Optional"
   },
   {
     "id": "ds.oauth2.o_login_button.login",

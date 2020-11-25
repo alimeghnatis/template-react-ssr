@@ -14,7 +14,7 @@ import(
 
   /* webpackPreload:true */
   /* webpackChunkName:'styles' */
-  '@fwrlines/alphabet-scss/main.scss'
+  'styles/local.scss'
 )
 
 

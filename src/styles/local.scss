@@ -1,0 +1,6 @@
+@use "@fwrlines/swatch/src/main" as swatch;
+@use "@fwrlines/stylebook/src/main" as stylebook;
+
+.style1 {
+  border-bottom: 1px solid var(--light-metadata);
+}
