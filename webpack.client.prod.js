@@ -94,9 +94,8 @@ module.exports = {
   },
 
 
-  mode:'development',
+  mode:'production',
 
-  /*
   optimization:{
     nodeEnv  :'production',
     minimize :true,
@@ -113,7 +112,7 @@ module.exports = {
         fwrlines:{
           chunks  :'all',
           priority:100,
-          test    :/fwrlines\/ds\/dist[\\/]/,
+          test    :/fwrlines\/ds[\\/]/,
           name(module) {
             //const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1]
             const nameSplit = module.context.split('/')
@@ -128,7 +127,7 @@ module.exports = {
           }
         }
         
-
+        /*
         vendor:{
           //priority:-10,
           test:/[\\/]node_modules[\\/]/,
@@ -141,10 +140,10 @@ module.exports = {
             return `npm.${packageName.replace('@', '')}`
           }
         }
+        */
       }
     }
   },
-  */
 
   plugins:[
 
