@@ -18,7 +18,7 @@ import(
 
   /* webpackPreload:true */
   /* webpackChunkName:'styles' */
-  '@fwrlines/alphabet-scss/main.scss'
+  'styles/local.scss'
 )
 
 //const isProduction = !(process.env.DEBUG === 'true')

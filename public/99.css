@@ -1,0 +1,1 @@
+.input .inside .side{display:inline-block;background:var(--form-side-background);padding:var(--form-input-padding);white-space:nowrap;color:var(--form-side-color)}.input .inside .side p{position:relative;top:50%;-webkit-transform:translateY(-50%);transform:translateY(-50%)}

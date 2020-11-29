@@ -45,5 +45,12 @@
   "ds.collections.cp.status_bar.retry": "",
   "ds.collections.cp.status_bar.update": "",
   "ds.collections.experimental.curriculum.title": "",
-  "ds.collections.saas.plan.features": ""
+  "ds.collections.saas.plan.features": "",
+  "ds.common.shortener.read_more": "",
+  "ds.common.shortener.show": "",
+  "ds.form.input_label.optional": "",
+  "app.default.graphqlInstalled": "",
+  "app.default.graphqlNotInstalled": "",
+  "app.default.successfullyInstalled": "",
+  "app.default.welcome": ""
 }

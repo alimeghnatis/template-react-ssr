@@ -26,11 +26,13 @@ const ReactLoadableSSRAddon = require('react-loadable-ssr-addon')
 const LoadablePlugin = require('@loadable/webpack-plugin')
 const CopyPlugin = require('copy-webpack-plugin')
 
+
 // D. SECURITY
 //const Dotenv = require('dotenv-webpack')
 
 /* E. EXTRA
    const NullPlugin = require('webpack-null-plugin') */
+const PreloadWebpackPlugin = require('preload-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 // https://momentjs.com/docs/
 
@@ -66,8 +68,8 @@ module.exports = {
       path.resolve(__dirname, './src/assets/images'),
       path.resolve(__dirname, './src/assets/favicon'),
       path.resolve(__dirname, './src/assets/other'),
-      path.resolve(__dirname, './node_modules/@fwrlines/ds.core/src/assets/fonts'),
-      path.resolve(__dirname, './node_modules/@fwrlines/ds.core/src/assets/images')
+      path.resolve(__dirname, './node_modules/@fwrlines/assets/fonts')
+      //path.resolve(__dirname, './node_modules/@fwrlines/ds.core/src/assets/images')
     ],
     watchContentBase  :true,
     historyApiFallback:true,
@@ -110,7 +112,7 @@ module.exports = {
         fwrlines:{
           chunks  :'all',
           priority:100,
-          test    :/fwrlines\/ds\/dist[\\/]/,
+          test    :/fwrlines\/ds[\\/]/,
           name(module) {
             //const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1]
             const nameSplit = module.context.split('/')
@@ -125,7 +127,6 @@ module.exports = {
           }
         }
         
-
         /*
         vendor:{
           //priority:-10,
@@ -146,11 +147,18 @@ module.exports = {
 
   plugins:[
 
+    new PreloadWebpackPlugin({
+      rel          :'preload',
+      include      :'allAssets',
+      fileBlacklist:[/\.(js|ttf|png|eot|css|jpe?g|svg)/]
+    }),
+
     new HtmlWebpackPlugin({
       template:'./src/assets/html/index.prod.html',
       //If we compile for SSR, the chunks to load will be added by the renderer depending on the page to load
       chunks  :isCompileForSSR ? [] : undefined
     }),
+
 
     new CopyPlugin({
       patterns:[
@@ -158,8 +166,8 @@ module.exports = {
         { from: './src/assets/images', to: './' },
         { from: './src/assets/favicon', to: './' }, //https://www.favicon-generator.org/
         { from: './src/assets/other', to: './' },
-        { from: './node_modules/@fwrlines/ds.core/src/assets/fonts', to: './' },
-        { from: './node_modules/@fwrlines/ds.core/src/assets/images', to: './' }
+        { from: './node_modules/@fwrlines/assets/fonts', to: './' }
+        //{ from: './node_modules/@fwrlines/ds.core/src/assets/images', to: './' }
       ]
     }),
 

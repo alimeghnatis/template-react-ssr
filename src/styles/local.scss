@@ -1,0 +1,10 @@
+@use "@fwrlines/swatch/src/main" as swatch;
+@use "@fwrlines/stylebook/src/main" as stylebook;
+
+#main {
+  height: 100%;
+}
+
+.style1 {
+  border-bottom: 1px solid var(--light-metadata);
+}

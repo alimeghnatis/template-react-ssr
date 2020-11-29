@@ -1,3 +1,4 @@
+import packageInfo from '../../package.json'
 import React, { useState, useContext } from 'react'
 //import Prototypes from 'prototypes' //Capitalize, etc
 import { Switch, Redirect, Route, Link } from 'react-router-dom'
@@ -10,6 +11,9 @@ import { Switch, Redirect, Route, Link } from 'react-router-dom'
 //import { MyProfile } from 'ui/local/dashboardMain'
 
 import {
+  GreenTick,
+  Subtitle,
+  ThemeSelector,
   AnimatedVCaret,
   Paginator,
   HorizontalBar,
@@ -22,36 +26,28 @@ import {
 /* @fwrlines/generator-react-component 2.2.3 */
 import { defineMessages, FormattedMessage } from 'react-intl'
 
+const endpoint = process.env.GRAPHQL_ENDPOINT
+
 const messages = defineMessages({
-  loginTitle:{
-    id            :'app.auth.pages.login.title',
-    defaultMessage:'Dashboard Access',
-    description   :'Dashboard Login Page Title'
+  welcome:{
+    id            :'app.default.welcome',
+    defaultMessage:'Welcome to { name } version { version }',
+    description   :'Default message'
   },
-  loginSubtitle:{
-    id            :'app.auth.pages.login.subtitle',
-    defaultMessage:'Login here to your dashboard account',
-    description   :'Subtitle for the login page'
+  successfullyInstalled:{
+    id            :'app.default.successfullyInstalled',
+    defaultMessage:`If you're seeing this, it means the application runs correctly.`,
+    description   :''
   },
-  unauthorizedTitle:{
-    id            :'app.auth.pages.unauthorized.title',
-    defaultMessage:'Unauthorized',
-    description   :'Subtitle for the unauthorized page'
+  graphqlNotInstalled:{
+    id            :'app.default.graphqlNotInstalled',
+    defaultMessage:`This app does not use GraphQL.`,
+    description   :''
   },
-  unauthorizedSubtitle:{
-    id            :'app.auth.pages.unauthorized.subtitle',
-    defaultMessage:'Your have sucessfully connected your account, but you are not allowed to log in.',
-    description   :'Subtitle for the unauthorized page'
-  },
-  unauthorizedExplanation:{
-    id            :'app.auth.pages.unauthorized.explanation',
-    defaultMessage:'You can try to login with another account. Alternatively, if you believe this is a mistake',
-    description   :'Text for the unauthorized page'
-  },
-  unauthorizedContact:{
-    id            :'app.auth.pages.unauthorized.contact',
-    defaultMessage:'you can contact support here.',
-    description   :'Contact support when theres a login problem'
+  graphqlInstalled:{
+    id            :'app.default.graphqlInstalled',
+    defaultMessage:`This app uses GraphQL at endpoint {endpoint}. A hello message from the server should appear below.`,
+    description   :''
   }
 })
 
@@ -66,20 +62,79 @@ const App = () => {
   } = useSite()
 
   return (
-    <>
-      <h1 className="x-primary c-x">Hello there</h1>
-      <Paginator paginator={{ totalPages: 200, page: 77 }} />
-      <HorizontalBar>Hey</HorizontalBar>
-      <FormattedMessage {...messages.unauthorizedContact} />
-      <AnimatedVCaret
-        active={active}
-        setActive={setActive}
-        id="myarrow"
-        width="200px"
-      />
-      <GraphQLTester />
+    <div
+      className={
+        [
+          'ui-'+ userTheme,
+          'y-background b-y'
+        ].filter(e => e).join(' ')
+      }
+      style={{
+        height        :'100%',
+        display       :'flex',
+        flexDirection :'column',
+        justifyContent:'center',
+        alignItems    :'center',
+        background    :'var(--background)'
+      }}
+    >
+      <div style={{
+        position:'absolute',
+        top     :'1em',
+        right   :'1em'
+      }}
+      >
+        <ThemeSelector className="c-link" />
+      </div>
+      <div
+        style={{
+          width    :'500px',
+          //background:'red',
+          textAlign:'center'
+        }}
+      >
+        <h1>
+          <FormattedMessage
+            {...messages.welcome}
+            values={{
+              version:packageInfo.version,
+              name   :packageInfo.name
+            }}
+          />
+        </h1>
+        <GreenTick style={{
+          height      :'12em',
+          marginBottom:'1em'
+        }}
+        />
+        <Subtitle>
+          <FormattedMessage
+            {...messages.successfullyInstalled}
+          />
+        </Subtitle>
+        { endpoint ?
+          <>
+            <Subtitle>
+
+              <FormattedMessage
+                {...messages.graphqlInstalled}
+                values={{
+                  endpoint
+                }}
+              />
+            </Subtitle>
+            <GraphQLTester />
+          </> :
+          <Subtitle>
+            <FormattedMessage
+              {...messages.graphqlNotInstalled}
+            />
+          </Subtitle>
+        }
+      </div>
       <SwitchRouteMap
         routes={routes}
+
         /*
         NotFound={<RedirectWithStatus
           status={404}
@@ -87,30 +142,7 @@ const App = () => {
                   />}
          */
       />
-      {/*}
-      <MyProfile />
-              <Clock
-                thing="thing"
-                thing2="thing2"
-              />
-              {' '}
-              <QueryTester />
-Includes
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to={loginPath}>LOGIN</Link>
-          </li>
-          <li>
-            <Link to="/d/profile">My account</Link>
-          </li>
-        </ul>
-      </nav>
-      */}
-    </>
+    </div>
   )
 }
 

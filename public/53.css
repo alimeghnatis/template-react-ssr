@@ -1,0 +1,1 @@
+.popup{display:inline-block;position:absolute}.popup:not(.visible){display:none}.popup.left{top:0;right:100%}.popup.right{top:0;left:100%}.popup.top{bottom:100%;left:0}.popup.bottom{top:100%;left:0}

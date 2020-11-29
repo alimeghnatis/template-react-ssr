@@ -1,0 +1,1 @@
+.side_bar{display:block;grid-column:sidebar-start/sidebar-end;position:relative;background:var(--x,var(--background))}.side_bar>.inside{display:-webkit-box;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-direction:column;-webkit-box-pack:safe center;justify-content:safe center;position:-webkit-sticky;position:sticky;top:0;height:100vh;overflow-y:auto}

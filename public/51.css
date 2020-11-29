@@ -1,0 +1,1 @@
+.label{background:var(--x,transparent);border-radius:var(--r);color:var(--on-x,var(--subtitle));display:inline-block;font-weight:700;line-height:.9em;margin-bottom:.3em;padding:.3em .5em .4em;vertical-align:bottom}.label.rounded{border-radius:1.7em}.h1 .label,.h2 .label,.h3 .label,.h4 .label,.h5 .label,h1 .label,h2 .label,h3 .label,h4 .label,h5 .label{vertical-align:top}

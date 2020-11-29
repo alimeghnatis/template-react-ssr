@@ -1,0 +1,1 @@
+.dashboard{display:grid;position:relative;width:100%;height:100%}@media (min-width:900px){.dashboard{grid-template-columns:[sidebar-start] var(--sidebar-width,300px) [sidebar-end] repeat(12,1fr)}}

@@ -45,5 +45,12 @@
   "ds.collections.cp.status_bar.retry": "Retry.",
   "ds.collections.cp.status_bar.update": "Update.",
   "ds.collections.experimental.curriculum.title": "Here are my degrees in antichronological order.",
-  "ds.collections.saas.plan.features": "Features"
+  "ds.collections.saas.plan.features": "Features",
+  "ds.common.shortener.read_more": "Read more.",
+  "ds.common.shortener.show": "Show",
+  "ds.form.input_label.optional": "Optional",
+  "app.default.graphqlInstalled": "This app uses GraphQL at endpoint {endpoint}. A hello message from the server should appear below.",
+  "app.default.graphqlNotInstalled": "This app does not use GraphQL.",
+  "app.default.successfullyInstalled": "If you're seeing this, it means the application runs correctly.",
+  "app.default.welcome": "Welcome to { name } version { version }"
 }

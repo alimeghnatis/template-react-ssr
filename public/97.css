@@ -1,0 +1,1 @@
+.input .description{margin:var(--form-description-margin);padding:var(--form-description-padding);color:var(--form-description-color);font-size:var(--form-description-font-size)}.input .description.valid{--form-description-color:var(--success)}.input .description.error{--form-description-color:var(--error)}

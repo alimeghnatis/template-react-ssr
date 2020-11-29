@@ -1,0 +1,1 @@
+.plan{--z:var(--y);display:-webkit-box;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;flex-direction:column}.plan .features{-webkit-box-flex:99;flex-grow:99}.plan .section{background:inherit}@media screen and (min-width:900px){.plan .section.price_tag{position:-webkit-sticky;position:sticky;top:3em;border-bottom:1px solid hsla(0,0%,100%,.1);z-index:1}}

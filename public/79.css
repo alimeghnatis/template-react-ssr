@@ -1,0 +1,1 @@
+.footer .content{display:grid;grid-gap:calc(var(--u, 1)*1em)}@media screen and (min-width:900px){.footer .content{grid-template-columns:minmax(200px,2fr) repeat(auto-fit,minmax(100px,1fr))}}

@@ -1,0 +1,325 @@
+{
+  "entrypoints": [
+    "main"
+  ],
+  "origins": {
+    "./green_tick.scss": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      0
+    ],
+    "./subtitle.scss": [
+      0,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      1
+    ],
+    "./theme_selector.scss": [
+      0,
+      1,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      2
+    ],
+    "ds.common.site_context": [
+      0,
+      1,
+      2,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      3
+    ],
+    "ds.dashboard.common": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      4
+    ],
+    "ds.dashboard.routes": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12,
+      5
+    ],
+    "ds.home.adrian_villa": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      7,
+      8,
+      9,
+      10,
+      12,
+      6
+    ],
+    "ds.main": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      8,
+      9,
+      10,
+      12,
+      7
+    ],
+    "ds.test.graph_q_l_tester": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      9,
+      10,
+      12,
+      8
+    ],
+    "main": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      10,
+      12,
+      9
+    ],
+    "runtime": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      12,
+      10
+    ],
+    "./styles/local.scss": [
+      11
+    ],
+    "vendors~main": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      12
+    ]
+  },
+  "assets": {
+    "0": {
+      "css": [
+        {
+          "file": "ds.common.green_tick.css?03dd9",
+          "hash": "0a4f50838dbb40c2b03e",
+          "publicPath": "/ds.common.green_tick.css?03dd9"
+        }
+      ],
+      "js": [
+        {
+          "file": "ds.common.green_tick.js?abe0ccec",
+          "hash": "0a4f50838dbb40c2b03e",
+          "publicPath": "/ds.common.green_tick.js?abe0ccec"
+        }
+      ]
+    },
+    "1": {
+      "css": [
+        {
+          "file": "ds.common.subtitle.css?154fa",
+          "hash": "77c3f86faeb99c12a689",
+          "publicPath": "/ds.common.subtitle.css?154fa"
+        }
+      ],
+      "js": [
+        {
+          "file": "ds.common.subtitle.js?abe0ccec",
+          "hash": "77c3f86faeb99c12a689",
+          "publicPath": "/ds.common.subtitle.js?abe0ccec"
+        }
+      ]
+    },
+    "2": {
+      "css": [
+        {
+          "file": "ds.site.theme_selector.css?c176c",
+          "hash": "f15238b3a8b5928604b0",
+          "publicPath": "/ds.site.theme_selector.css?c176c"
+        }
+      ],
+      "js": [
+        {
+          "file": "ds.site.theme_selector.js?abe0ccec",
+          "hash": "f15238b3a8b5928604b0",
+          "publicPath": "/ds.site.theme_selector.js?abe0ccec"
+        }
+      ]
+    },
+    "3": {
+      "js": [
+        {
+          "file": "ds.common.site_context.js?abe0ccec",
+          "hash": "8bb98d727b7d481080bf",
+          "publicPath": "/ds.common.site_context.js?abe0ccec"
+        }
+      ]
+    },
+    "4": {
+      "js": [
+        {
+          "file": "ds.dashboard.common.js?abe0ccec",
+          "hash": "ceefa5b168200327cadb",
+          "publicPath": "/ds.dashboard.common.js?abe0ccec"
+        }
+      ]
+    },
+    "5": {
+      "js": [
+        {
+          "file": "ds.dashboard.routes.js?abe0ccec",
+          "hash": "64e4c43536499ad329ad",
+          "publicPath": "/ds.dashboard.routes.js?abe0ccec"
+        }
+      ]
+    },
+    "6": {
+      "js": [
+        {
+          "file": "ds.home.adrian_villa.js?abe0ccec",
+          "hash": "61150c6dafc2c914faed",
+          "publicPath": "/ds.home.adrian_villa.js?abe0ccec"
+        }
+      ]
+    },
+    "7": {
+      "js": [
+        {
+          "file": "ds.main.js?abe0ccec",
+          "hash": "9602a64656a3b761aa24",
+          "publicPath": "/ds.main.js?abe0ccec"
+        }
+      ]
+    },
+    "8": {
+      "js": [
+        {
+          "file": "ds.test.graph_q_l_tester.js?abe0ccec",
+          "hash": "a3b8f54a6eb22d82187e",
+          "publicPath": "/ds.test.graph_q_l_tester.js?abe0ccec"
+        }
+      ]
+    },
+    "9": {
+      "js": [
+        {
+          "file": "main.js?abe0ccec",
+          "hash": "64c5315d2c47690b33ee",
+          "publicPath": "/main.js?abe0ccec"
+        }
+      ]
+    },
+    "10": {
+      "js": [
+        {
+          "file": "runtime.js?abe0ccec",
+          "hash": "d19682b8703f97acfdf9",
+          "publicPath": "/runtime.js?abe0ccec"
+        }
+      ]
+    },
+    "11": {
+      "css": [
+        {
+          "file": "styles.css?a5115",
+          "hash": "c5babdf270d32a00d48d",
+          "publicPath": "/styles.css?a5115"
+        }
+      ],
+      "js": [
+        {
+          "file": "styles.js?abe0ccec",
+          "hash": "c5babdf270d32a00d48d",
+          "publicPath": "/styles.js?abe0ccec"
+        }
+      ]
+    },
+    "12": {
+      "js": [
+        {
+          "file": "vendors~main.js?abe0ccec",
+          "hash": "e15b18f342198110b2dc",
+          "publicPath": "/vendors~main.js?abe0ccec"
+        }
+      ]
+    }
+  }
+}
